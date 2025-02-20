@@ -28,6 +28,10 @@ jobs:
           path: ~/.cache/Tectonic
           key: tectonic-${{ runner.os }}
 
+      - name: Install fonts
+        run: |
+          sudo apt install -y fonts-noto-cjk
+
       - name: Setup Miniconda
         uses: conda-incubator/setup-miniconda@v3.1.1
         with:
