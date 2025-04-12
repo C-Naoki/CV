@@ -1,0 +1,18 @@
+%%
+%%culine.sty by Ohishi Masaru
+%%
+\def\colorunderline[#1]#2#3{%
+{\color[#1]{#2}\underline{\textcolor[named]{Black}{#3}}}%
+}%
+
+\let\und@rlin@\underline
+%
+%\def\Underline{\@ifnextchar[{\@underline}{\und@rlin@}}%
+% ?jumoline.sty ?\Underline ?? B? ??C
+%\Underline -> \culine ??X
+%
+\def\culine{\@ifnextchar[{\@underline}{\und@rlin@}}%
+\def\@underline[#1]#2{{\color[named]{#1}%
+\und@rlin@{\textcolor[named]{Black}{#2}}}}%
+
+\endinput
