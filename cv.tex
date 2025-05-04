@@ -19,7 +19,7 @@
 \newcommand{\FirstName}{Naoki}
 \newcommand{\LastName}{Chihara}
 \newcommand{\MyName}{\FirstName\ \LastName}
-\newcommand{\Me}{\uline{\FirstName\ \LastName}}  % For citations
+\newcommand{\Me}{\smartunderline{\FirstName\ \LastName}}  % For citations
 \newcommand{\Email}{naoki88[at]sanken.osaka-u.ac.jp}
 \newcommand{\PersonalWebsite}{c-naoki.vercel.app}
 \newcommand{\LabWebsite}{www.dm.sanken.osaka-u.ac.jp}
@@ -104,6 +104,20 @@
 % Underline
 \usepackage{culine}
 \usepackage[normalem]{ulem}
+\usepackage{soul}
+
+\usepackage{tikz}
+\usepackage{fontspec} % if using lualatex or xelatex
+\usetikzlibrary{calc}
+\usepackage{expl3}
+
+\newcommand{\smartunderline}[1]{%
+  \tikz[baseline=(X.base)]{
+    \node[inner sep=0pt, outer sep=0pt] (X) {\strut #1};
+    \draw[line width=0.5pt]
+      ([yshift=0.6ex]X.south west) -- ([yshift=0.6ex]X.south east);
+  }%
+}
 
 % Add semi-bold
 \DeclareRobustCommand{\sbseries}{\fontseries{sb}\selectfont}
@@ -141,7 +155,8 @@
 
 % Set the spacing and format of sections
 \titleformat{\section}
-  {\normalfont\Large\mdseries} % format
+  % {\normalfont\Large\mdseries} % format
+  {\fontsize{16}{19}\mdseries}
   {} % label
   {0pt} % separation (left separation for hang)
   {} % text before title
@@ -273,7 +288,7 @@
     \begin{minipage}[h]{0.5\textwidth}
       \vspace{-1.2em}
         \begin{tabular}[t]{ll}
-          \textbf{Address} & SANKEN, Osaka University \\[-0.35em]
+          \textbf{Address} & SANKEN, \OU \\[-0.35em]
           & Mihogaoka 8-1, Ibaraki, Osaka 567-0047, Japan \\[-0.35em]
           \textbf{Email} & \href{mailto:\Email}{\Email} \\[-0.35em]
           & (please replace [at] with @) \\[-0.35em]
@@ -301,8 +316,8 @@ I am fortunate to be advised by \href{\YSakuraiURL}{\Prof{\YSakurai}} and \href{
 I received my B.Sc.\! and M.Sc.\! degrees from \OU\ advised by \href{\MOnizukaURL}{\Prof{\MOnizuka}} and \href{\YSakuraiURL}{\Prof{\YSakurai}} in March 2023 and 2025, respectively.
 \vspace{0.2em}
 \\
-\textbf{Research interests}:
-\uline{Time series analysis}, Data mining, \uline{Stream processing}, \uline{Causality}, Koopman operator theory, \\ Missingness mechanisms, Time series forecasting
+\textbf{Keywords}:
+\smartunderline{Time series analysis}, Data mining, \smartunderline{Stream processing}, \smartunderline{Causality}, Koopman operator theory, Missingness mechanisms, Time series forecasting, \smartunderline{Bayesian optimization}
 \vspace{0.2em}
 \\
 \textbf{Links}:
@@ -424,7 +439,7 @@ I received my B.Sc.\! and M.Sc.\! degrees from \OU\ advised by \href{\MOnizukaUR
   \textbf{Graduate School of Information Science and Technology}, \OU
   \vspace{-0.1em}
   \newline
-  \textcolor{gray}{\fontsize{9pt}{0}\selectfont Teaching Assistant}
+  \textcolor{gray}{\fontsize{9pt}{0}\selectfont Assistant in the detection of variable celestial objects}
   &
   \hfill \Duration{2021}{2023}
   \vspace{0.45em}
@@ -483,7 +498,7 @@ I received my B.Sc.\! and M.Sc.\! degrees from \OU\ advised by \href{\MOnizukaUR
 \section{Grants and Awards}
 
 \begin{EntriesTableRight}
-  \AwardEntry{Osaka University Graduate School of Information Science and Technology Award}{}{ \Year{Mar \!2025}}{}
+  \AwardEntry{Award of the Graduate School of Information Science and Technology of Osaka University}{}{ \Year{Mar \!2025}}{}
   \AwardEntry{DEIM2025 Student Presentation Award}{}{ \Year{Mar \!2025}}{}
   \AwardEntry{\textbf{Information Processing Society of Japan (IPSJ) Yamashita SIG Research Award}}{https://www.ipsj.or.jp/award/yamasita2024-detail.html\#dbs}{\Year{Jul \!2024}}{}
   \AwardEntry{DEIM2024 Best Paper Award Runner-up}{https://confit.atlas.jp/guide/event/deim2024/static/awards}{\Year{Jun \!2024}}{ (top 1.4\%)}
