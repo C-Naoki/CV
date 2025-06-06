@@ -1,0 +1,91 @@
+\providecommand{\lang}{en}
+
+\newcommand{\deflangvalue}[3]{%
+  \ifthenelse{\equal{\lang}{en}}{%
+    \expandafter\def\csname #1Value\endcsname{#2}%
+  }{%
+    \expandafter\def\csname #1Value\endcsname{#3}%
+  }%
+  \expandafter\def\csname #1\endcsname{\csname #1Value\endcsname}%
+}
+
+% header
+\deflangvalue{AddressLabel}{\textbf{Address}}{\text{住所}}
+\deflangvalue{Affiliation}{SANKEN, \OU}{大阪大学 産業科学研究所}
+\deflangvalue{Address}
+{Mihogaoka 8-1, Ibaraki, Osaka 567-0047, Japan}
+{565-0871 大阪府茨木市美穂ヶ丘 8-1}
+\deflangvalue{EmailLabel}{\textbf{Email}}{\textbf{メール}}
+\deflangvalue{EmailSuppl}
+{please replace [at] with @}
+{[at] を @ に置き換えてください}
+\deflangvalue{UnivLabel}{\textbf{University}}{\textbf{大学}}
+\deflangvalue{LabLabel}{\textbf{Laboratory}}{\textbf{研究室}}
+\deflangvalue{WebsiteLabel}{\textbf{Website}}{\textbf{Webサイト}}
+\deflangvalue{LastUpdatedLabel}{\textbf{Last Updated Date}}{\textbf{最終更新日}}
+
+% education
+\deflangvalue{Education}{Education}{学歴}
+\deflangvalue{PhD}
+{\textbf{Ph.D. in Information Science}, \OU}
+{\textbf{博士（情報科学）}}
+\deflangvalue{PhDDepartment}
+{Department of Information Systems Engineering, Graduate School of Information Science and Technology}
+{\OU\ 情報科学研究科\ 情報システム工学専攻}
+\deflangvalue{ExpectedDate}
+{Expected graduation date is March 2028}
+{卒業予定日：2028年3月}
+\deflangvalue{PhDSupervisor}
+{Supervisor: \Prof{\YSakurai}}
+{指導教員：櫻井保志教授}
+\deflangvalue{MSc}
+{\textbf{M.Sc.\! in Information Science}, \OU}
+{\textbf{修士（情報科学）}}
+\deflangvalue{MScDepartment}
+{Department of Information Systems Engineering, Graduate School of Information Science and Technology}
+{\OU\ 情報科学研究科\ 情報システム工学専攻}
+\deflangvalue{MScThesis}
+{Thesis: Stream Mining Time-evolving Causality for Time Series Forecasting}
+{学位論文：時系列データストリームにおける将来予測のための時間変化する因果関係の抽出}
+\deflangvalue{MScSupervisor}
+{Supervisor: \Prof{\YSakurai}}
+{指導教員：櫻井保志教授}
+\deflangvalue{BSc}
+{\textbf{B.Sc.\! in Engineering}, \OU}
+{\textbf{学士（工学）}}
+\deflangvalue{BScDepartment}
+{Department of Electronic and Information Engineering, School of Engineering}
+{\OU\ 工学部\ 電子情報工学科}
+\deflangvalue{BScThesis}
+{Thesis: Detection of Variable Celestial Objects using Machine Learning-based Periodic Analysis and Domain Knowledge}
+{学位論文：機械学習による周期解析及びドメイン知識を活用した変動天体検出}
+\deflangvalue{BScSupervisor}
+{Supervisor: \Prof{\MOnizuka}}
+{指導教員：鬼塚真教授}
+
+% experience
+\deflangvalue{Experience}{Experience}{職歴}
+
+% awards
+\deflangvalue{Awards}{Awards}{受賞}
+\deflangvalue{OsakaUnivAward}
+{Award of the Graduate School of Information Science and Technology of Osaka University}
+{大阪大学情報科学研究科賞}
+\deflangvalue{DEIM2025Presentation}
+{DEIM2025 Student Presentation Award}
+{DEIM2025 学生プレゼンテーション賞}
+\deflangvalue{YamashitaAward}
+{Information Processing Society of Japan (IPSJ) Yamashita SIG Research Award}
+{情報処理学会\ 山下記念研究賞}
+\deflangvalue{DEIM2024RunnerUp}
+{DEIM2024 Best Paper Award Runner-up}
+{DEIM2024 優秀論文賞}
+\deflangvalue{HWIPScholarship}
+{Osaka University Humanware Innovation Program Scholarship}
+{ヒューマンウェアイノベーション博士課程プログラム}
+
+% publications
+\deflangvalue{Publications}{Publications}{研究業績}
+\deflangvalue{Peerreviewed}{Peer-reviewed Publications}{査読付き論文}
+\deflangvalue{NonPeerreviewed}{Non-refereed Publications}{査読なし論文}
+\deflangvalue{Patents}{Patents}{特許}

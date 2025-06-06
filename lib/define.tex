@@ -1,0 +1,192 @@
+% Useful aliases
+\newcommand{\OU}{The University of Osaka}
+
+% Identifying information
+\newcommand{\Title}{Curriculum Vit\ae\ Summary}
+\newcommand{\FirstName}{Naoki}
+\newcommand{\LastName}{Chihara}
+\newcommand{\MyName}{\FirstName\ \LastName}
+\newcommand{\Me}{\smartunderline{\FirstName\ \LastName}}  % For citations
+\newcommand{\Email}{naoki88[at]sanken.osaka-u.ac.jp}
+\newcommand{\PersonalWebsite}{c-naoki.vercel.app}
+\newcommand{\LabWebsite}{www.dm.sanken.osaka-u.ac.jp}
+\newcommand{\ORCID}{0009-0005-7061-8214}
+\newcommand{\GitHubProfile}{C-Naoki}
+\newcommand{\Linkedin}{c-naoki}
+\newcommand{\Gscholar}{pq2b3jQAAAAJ}
+\newcommand{\Twitter}{c_naoki13}
+
+% Names
+\newcommand{\Prof}[1]{Prof.\! #1}
+\newcommand{\YSakurai}{Yasushi Sakurai}
+\newcommand{\YMatsubara}{Yasuko Matsubara}
+\newcommand{\RFujiwara}{Ren Fujiwara}
+\newcommand{\MOnizuka}{Makoto Onizuka}
+
+% URLs
+\newcommand{\YSakuraiURL}{https://www.dm.sanken.osaka-u.ac.jp/~yasushi/index-j.html}
+\newcommand{\YMatsubaraURL}{https://www.dm.sanken.osaka-u.ac.jp/~yasuko/}
+\newcommand{\MOnizukaURL}{http://www-bigdata.ist.osaka-u.ac.jp/professor/onizuka/onizuka_en.html}
+
+% Language configuration
+\def\lang{en}
+\input{lib/lang_macros}
+
+\newcommand{\smartunderline}[1]{%
+  \tikz[baseline=(X.base)]{
+    \node[inner sep=0pt, outer sep=0pt] (X) {\strut #1};
+    \draw[line width=0.5pt]
+      ([yshift=0.6ex]X.south west) -- ([yshift=0.6ex]X.south east);
+  }%
+}
+
+% Add semi-bold
+\DeclareRobustCommand{\sbseries}{\fontseries{sb}\selectfont}
+\DeclareTextFontCommand{\textsb}{\sbseries}
+
+% Template configuration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\geometry{%
+  margin=12.5mm,
+  headsep=0mm,
+  headheight=0mm,
+  footskip=5mm,
+  includehead=true,
+  includefoot=true
+}
+
+% Custom colors
+\definecolor{mediumgray}{gray}{0.5}
+\definecolor{lightgray}{gray}{0.9}
+\definecolor{mediumblue}{HTML}{2060c2}
+\definecolor{lightblue}{HTML}{a0c3ff}
+\definecolor{mediumred}{HTML}{ca8a03}
+
+% No indentation
+\setlength\parindent{0cm}
+
+% Increase the line spacing
+\renewcommand{\baselinestretch}{1.1}
+% and the spacing between rows in tables
+\renewcommand{\arraystretch}{1.25}
+
+% Remove space between items in itemize and enumerate
+\setlist{nosep}
+
+% Set the spacing and format of sections
+\titleformat{\section}
+  % {\normalfont\Large\mdseries} % format
+  {\fontsize{16}{19}\mdseries}
+  {} % label
+  {0pt} % separation (left separation for hang)
+  {} % text before title
+  [\titlerule] % text after title
+\titlespacing*{\section}
+  {0pt} % left pad
+  {0.1cm} % before
+  {0cm} % after
+
+% Disable number of sections. Use this instead of "section*" so that the sections still
+% appear as PDF bookmarks. Otherwise, would have to add the table of contents entries
+% manually.
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+% Define a new environment to place all CV entries in a 2-column table.
+% Left column are the dates, right column the entries.
+\newcommand{\TablePad}{\vspace{-0.2cm}}
+\NewEnviron{EntriesTableDuration}{
+\TablePad
+\begin{tabularx}{\textwidth}{@{}p{0.10\textwidth}@{\hspace{0.02\textwidth}}p{0.88\textwidth}@{}}
+  \BODY
+\end{tabularx}
+\TablePad
+}
+\NewEnviron{EntriesTableYear}{
+\TablePad
+\begin{tabularx}{\textwidth}{@{}p{0.05\textwidth}@{\hspace{0.01\textwidth}}p{0.94\textwidth}@{}}
+  \BODY
+\end{tabularx}
+\TablePad
+}
+\NewEnviron{EntriesTablePublications}{
+\TablePad
+\begin{tabularx}{\textwidth}{@{}p{0.035\textwidth}@{\hspace{0.01\textwidth}}p{0.955\textwidth}@{}}
+  \BODY
+\end{tabularx}
+\TablePad
+}
+\NewEnviron{EntriesTableRight}{
+\TablePad
+\begin{tabularx}{\textwidth}{@{}p{0.82\textwidth}@{\hspace{0.01\textwidth}}>{\raggedleft\arraybackslash}p{0.17\textwidth}@{}}
+  \BODY
+\end{tabularx}
+\TablePad
+}
+
+% Macros to set the year and duration on the left column
+\newcommand{\Duration}[2]{\fontsize{10pt}{0}\selectfont \texttt{#1-#2}}
+\newcommand{\DurationYear}[4]{\fontsize{10pt}{0}\selectfont \texttt{#1\!\!\@ #2 -- #3\!\!\@ #4}}
+\newcommand{\Year}[1]{\fontsize{10pt}{0}\selectfont \texttt{#1}}
+\newcommand{\Ongoing}{present}
+\newcommand{\Future}{future}
+
+% Macros to add entries to the table
+\newcommand{\GrantEntry}[6]{%
+  \parbox[t]{\linewidth}{{
+    \hypersetup{urlcolor=black} \href{#2}{#1}#4} \\
+    Research Title: #5 \\
+    Principal Investigator: #6}
+    &
+    #3 \\[3.0em]
+}
+
+% Macros to add links and mark publications
+\newcommand{\DOI}[1]{
+\!\!\!\:\!\!
+\faBook{}
+{\fontsize{11.5pt}{0}\selectfont {\usefont{T1}{SourceSansPro-TLF}{m}{sc} doi:}} \href{https://doi.org/#1}{#1}}
+\newcommand{\Website}[1]{\href{https://#1}{#1}}
+\newcommand{\Preprint}[1]{Preprint: \href{https://doi.org/#1}{#1}}
+\newcommand{\GitHub}[1]{\faGithub{}\, \href{https://github.com/#1}{#1}}
+\newcommand{\Data}[1]{\faChartBar{} doi: \href{https://doi.org/#1}{#1}}
+\newcommand{\URL}[1]{
+\!\!\!\!\!\:
+\faLink{}
+{\fontsize{11.5pt}{0}\selectfont {\usefont{T1}{SourceSansPro-TLF}{m}{sc} url:}} \href{https://#1}{#1}}
+\newcommand{\video}[1]{\raisebox{-0.06ex}{\faYoutube{}}\, \href{https://youtu.be/#1}{#1}}
+
+% Define command to insert month name and year as date
+\newdateformat{monthyear}{\monthname[\THEMONTH]\ \THEDAY, \THEYEAR}
+
+% Configure a fancy footer
+\newcommand{\Separator}{\hspace{3pt}|\hspace{3pt}}
+\newcommand{\FooterFont}{\footnotesize\color{mediumgray}}
+\pagestyle{fancy}
+\fancyhf{}
+\lfoot{%
+  \FooterFont{}
+  \MyName{}
+  \Separator{}
+  \Title{}
+}
+\rfoot{%
+  \FooterFont{}
+  Last updated: \monthyear\today{}
+  \Separator{}
+  Page \thepage{}\space of\space \ztotpages
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{1pt}
+\preto{\footrule}{\color{lightgray}}
+
+% Metadata for the PDF output and control of hyperlinks
+\hypersetup{
+  colorlinks,
+  allcolors=mediumblue,
+  breaklinks=true,
+  pdftitle={\Title{} - \MyName},
+  pdfauthor={\MyName},
+}

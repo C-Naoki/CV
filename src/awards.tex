@@ -1,0 +1,13 @@
+\newcommand{\AwardEntry}[4]{%
+  \parbox[t]{\linewidth}{{\hypersetup{urlcolor=black} \href{#2}{#1}#4}}
+  &
+  #3 \\
+}
+
+\begin{EntriesTableRight}
+  \AwardEntry{\OsakaUnivAward}{}{\Year{Mar \!2025}}{}
+  \AwardEntry{\csname DEIM2025Presentation\endcsname}{}{\Year{Mar \!2025}}{}
+  \AwardEntry{\textbf{\YamashitaAward}}{https://www.ipsj.or.jp/award/yamasita2024-detail.html\#dbs}{\Year{Jul \!2024}}{}
+  \AwardEntry{\csname DEIM2024RunnerUp\endcsname}{https://confit.atlas.jp/guide/event/deim2024/static/awards}{\Year{Jun \!2024}}{ (top 1.4\%)}
+  % \AwardEntry{Osaka University Humanware Innovation Program Scholarship}{}{ \Duration{2023}{\Ongoing}}{}
+\end{EntriesTableRight}

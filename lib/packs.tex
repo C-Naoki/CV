@@ -1,0 +1,73 @@
+% === Load packages ===
+
+% Insert image file
+\usepackage[dvipdfmx]{graphicx}
+
+% Full Unicode support for non-ASCII characters
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[TU]{fontenc}
+
+% Set main fonts
+\usepackage[sfdefault]{atkinson}
+\usepackage[ttdefault]{sourcecodepro}
+% \usepackage[sfdefault]{FiraSans}
+
+% For Japanese characters
+\usepackage{xeCJK}
+\setCJKmainfont{Noto Sans CJK JP}  % for Linux
+% \setCJKmainfont{Noto Sans JP}  % for MacOS
+
+% Icon fonts
+\usepackage{fontawesome5}
+\usepackage{academicons}
+\newcommand{\faDblp}{\hspace{-0.20em}\raisebox{-0.25em}{\includegraphics[height=1.1em]{./fig/dblp.png}}\hspace{-0.1em}}
+
+% Disable hyphenation
+% \usepackage[none]{hyphenat}
+
+\usepackage{ifthen}
+
+% Control the font size
+\usepackage{anyfontsize}
+
+% For fancy and multipage tables
+\usepackage{tabularx}
+\usepackage{ltablex}
+
+% For new environments
+\usepackage{environ}
+
+% Manage dates and times
+\usepackage{datetime}
+
+% Set the page margins
+\usepackage{geometry}
+
+% To get the total page numbers (\pageref{LastPage})
+\usepackage{zref-totpages}
+
+% Control spacing in enumerates
+\usepackage{enumitem}
+
+% Use custom colors
+\usepackage[usenames,dvipsnames]{xcolor}
+
+% Configure section titles
+\usepackage{titlesec}
+
+% Fancy header configuration
+\usepackage{fancyhdr}
+
+% Control PDF metadata and links
+\usepackage[colorlinks=true]{hyperref}
+
+% Underline
+\usepackage{lib/culine}
+\usepackage[normalem]{ulem}
+\usepackage{soul}
+
+\usepackage{tikz}
+\usepackage{fontspec} % if using lualatex or xelatex
+\usetikzlibrary{calc}
+\usepackage{expl3}
