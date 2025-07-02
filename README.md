@@ -1,25 +1,16 @@
 # Curriculum Vitae
 
-These are the LaTeX sources for my academic CV.
+This repository contains the LaTeX source files for my academic curriculum vitae (CV).
 
-**Download** the latest compiled PDF:
-[cv.pdf](https://github.com/leouieda/cv/raw/pdf/cv.pdf)
+The latest compiled PDF:
+[[view]](https://c-naoki.github.io/CV/cv.pdf),
+[[download]](https://github.com/c-naoki/cv/raw/pdf/cv.pdf)
 
 ## Template
 
-You're free to reuse and modify this template under the terms of the BSD
-3-clause License (see `LICENSE.txt`).
+I sincerely appreciate the following valuable template:
 
-To use it:
-
-* Click on the ["Use this template"](https://github.com/leouieda/cv/generate)
-  button to grab a copy of the repository.
-* Install Tectonic, either from their website or using the conda
-  `environment.yml` file provided in the repository.
-* Fill out the variables and fields in the `.tex` file.
-* Compile the PDF to check the results with `make show`.
-* Push your changes and GitHub Actions should do it's magic and make the PDF
-  available at `https://github.com/YOURUSERNAME/cv/raw/pdf/cv.pdf`.
+https://github.com/leouieda/cv
 
 ### About
 
