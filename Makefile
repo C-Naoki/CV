@@ -2,13 +2,15 @@
 
 # The main source file
 TEX = $(wildcard *.tex)
+# Additional source files
+SUBTEX := $(wildcard lib/*.tex src/*.tex)
 # The PDF file
 PDF = $(patsubst %.tex,%.pdf,$(TEX))
 
 # Rules for building, opening, and cleaning the PDF output
 all: $(PDF)
 
-%.pdf: %.tex
+%.pdf: %.tex $(SUBTEX)
 	tectonic -X compile $<
 
 show: $(PDF)
