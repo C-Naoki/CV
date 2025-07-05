@@ -1,0 +1,61 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A clean template for an academic CV. This is a short summary version.
+%
+% Uses tabularx to create two column entries (date and job/edu/citation).
+% Defines commands to make adding entries simpler.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[9pt,a4paper]{article}
+
+\input{lib/packs}
+\input{lib/define}
+
+% Language configuration
+\def\lang{ja}
+\input{lib/lang_macros}
+
+\begin{document}
+
+\input{src/header}
+\vspace{-1.0em}
+
+\input{src/summary}
+\vspace{-1.5em}
+
+\section{自己紹介}
+  \vspace{1.0em}
+  私は\OU の博士後期課程１年目の学生であり，
+  産業科学研究所（SANKEN）にて特任研究員を務めています．
+  研究テーマは主に，データストリームマイニング [C1, C2] および
+  時系列データにおける因果探索 [C1] に取り組んでいます．
+  現在は同研究所にて，\href{\YSakuraiURL}{櫻井保志教授}および\href{\YMatsubaraURL}{松原靖子准教授}のもとで研究を進めています．
+  学士号および修士号は，\href{\MOnizukaURL}{鬼塚誠教授}および\href{\YSakuraiURL}{櫻井保志教授}のご指導のもと，それぞれ2023年3月および2025年3月に取得いたしました．
+  \vspace{0.2em}
+  \\
+  \input{src/keywords_links}
+
+\section{\Education}
+  \input{src/education}
+
+\section{\Experience}
+  \input{src/experience}
+
+\section{\Awards}
+  \input{src/awards}
+
+\section{研究経費}
+
+\begin{EntriesTableRight}
+  \GrantEntry{\textbf{大阪大学博士課程教育リーディングプログラム\ 学生主体融合領域研究支援経費}}{}{ \Duration{2025}{2026}}{}{ベイズ最適化を活用したタンパク質の構造決定の効率化}{890}{中村\ 祥大}
+  \GrantEntry{\textbf{日本学術振興会\ 特別研究員奨励費}}{}{ \Duration{2025}{2028}}{}{時系列データストリーム中の因果関係の検出に基づいた高速かつ解釈可能な将来予測}{2,100}{\MyNameJa}
+  \GrantEntry{\textbf{大阪大学博士課程教育リーディングプログラム\ 学生主体融合領域研究支援経費}}{}{ \Duration{2023}{2024}}{}{リーダードローンによるドローン群の協調運搬システムの提案}{900}{Li\ Aiyi}
+\end{EntriesTableRight}
+
+\section{\Publications}
+  \input{src/publications}
+
+\section{Academic Services}
+  \input{src/academic_services}
+
+\end{document}

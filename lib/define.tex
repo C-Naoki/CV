@@ -1,11 +1,9 @@
-% Useful aliases
-\newcommand{\OU}{The University of Osaka}
-
 % Identifying information
 \newcommand{\Title}{Curriculum Vit\ae\ Summary}
 \newcommand{\FirstName}{Naoki}
 \newcommand{\LastName}{Chihara}
 \newcommand{\MyName}{\FirstName\ \LastName}
+\newcommand{\MyNameJa}{千原\ 直己}
 \newcommand{\Me}{\smartunderline{\FirstName\ \LastName}}  % For citations
 \newcommand{\Email}{naoki88[at]sanken.osaka-u.ac.jp}
 \newcommand{\PersonalWebsite}{c-naoki.vercel.app}
@@ -27,10 +25,6 @@
 \newcommand{\YSakuraiURL}{https://www.dm.sanken.osaka-u.ac.jp/~yasushi/index-j.html}
 \newcommand{\YMatsubaraURL}{https://www.dm.sanken.osaka-u.ac.jp/~yasuko/}
 \newcommand{\MOnizukaURL}{http://www-bigdata.ist.osaka-u.ac.jp/professor/onizuka/onizuka_en.html}
-
-% Language configuration
-\def\lang{en}
-\input{lib/lang_macros}
 
 \newcommand{\smartunderline}[1]{%
   \tikz[baseline=(X.base)]{
@@ -134,13 +128,14 @@
 \newcommand{\Future}{future}
 
 % Macros to add entries to the table
-\newcommand{\GrantEntry}[6]{%
+\newcommand{\GrantEntry}[7]{%
   \parbox[t]{\linewidth}{{
     \hypersetup{urlcolor=black} \href{#2}{#1}#4} \\
-    Research Title: #5 \\
-    Principal Investigator: #6}
+    研究題目：#5 \\
+    配分総額：#6千円 \\
+    研究代表者：#7}
     &
-    #3 \\[3.0em]
+    #3 \\[4.0em]
 }
 
 % Macros to add links and mark publications
