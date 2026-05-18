@@ -15,8 +15,11 @@
 
 % For Japanese characters
 \usepackage{xeCJK}
-\setCJKmainfont{Noto Sans CJK JP}  % for Linux
-% \setCJKmainfont{Noto Sans JP}  % for MacOS
+\IfFontExistsTF{Noto Sans CJK JP}{
+  \setCJKmainfont{Noto Sans CJK JP}
+}{
+  \setCJKmainfont{Noto Sans JP}
+}
 
 % Icon fonts
 \usepackage{fontawesome5}
