@@ -4,4 +4,4 @@ channels:
 dependencies:
   - python==3.12
   - make
-  - tectonic
+  - tectonic=0.15.0
